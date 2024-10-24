@@ -1,0 +1,809 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+@font-face {
+  font-family: "SVHeaderFont";
+  src: url(StardewValley.ttf);
+}
+
+@font-face {
+  font-family: "SVItemFont";
+  src: url(stardew-item-font.ttf);
+}
+
+:root {
+  background-image: url(Pelican_Day.png);
+  background-repeat: no-repeat;
+  background-color: hsl(36, 96%, 72%);
+  background-position: center;
+  --TRANS-BGC: hsla(36, 96%, 72%, 0.6);
+  --TEXT-BGC: hsl(36, 96%, 72%);
+  --TEXT-COLOR: hsl(6, 44%, 26%);
+  --LIN-GRAD-DARK: hsl(13, 96%, 19%);
+  --LIN-GRAD-LIGHT: hsl(34, 94%, 52%);
+  --SLIDER-COLOR: #ffdf2d;
+  --SLIDER-BGC: #1aa3ff;
+  --TEXT-SHADOW: hsl(36, 100%, 75%);
+  --HEADER-FONT: "SVHeaderFont";
+  --TEXT-FONT: "SVItemFont";
+  --LINE-SPACE: 0.1em;
+  --FONT-WEIGHT: bold;
+  --WIDTH: clamp(700px, 40%, 2000px);
+  --BORDER-RADIUS: 10px;
+}
+
+.dark-theme {
+  background-image: url(Pelican_Night.png);
+  background-color: #000;
+  --TRANS-BGC: hsla(207, 100%, 11%, 0.5);
+  --TEXT-BGC: #000;
+  --TEXT-COLOR: #ededed;
+  --LIN-GRAD-DARK: hsl(240, 62%, 49%);
+  --LIN-GRAD-LIGHT: hsl(318, 100%, 65%);
+  --SLIDER-COLOR: #ededed;
+  --SLIDER-BGC: hsl(247, 100%, 21%);
+  --TEXT-SHADOW: hsl(247, 100%, 21%);
+  --FONT-WEIGHT: normal;
+}
+
+body,
+nav,
+footer {
+  width: var(--WIDTH);
+}
+
+nav,
+footer {
+  background-color: var(--TEXT-BGC);
+  height: 50px;
+}
+
+body {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  background-color: var(--TRANS-BGC);
+  font-family: "SVItemFont";
+  color: var(--TEXT-COLOR);
+}
+
+nav {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  z-index: 2;
+  font-family: var(--HEADER-FONT);
+  font-size: 1.7em;
+}
+
+nav a {
+  position: relative;
+  color: var(--TEXT-COLOR);
+  text-decoration: none;
+}
+
+footer {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  position: fixed;
+  bottom: 0;
+  color: var(--TEXT-COLOR);
+  font-family: var(--HEADER-FONT);
+  font-size: 1.5em;
+  text-align: center;
+}
+
+h1 {
+  font-family: var(--HEADER-FONT);
+  font-weight: var(--FONT-WEIGHT);
+  letter-spacing: var(--LINE-SPACE);
+}
+
+.bottom_border {
+  background: linear-gradient(var(--LIN-GRAD-LIGHT), var(--LIN-GRAD-DARK));
+  width: var(--WIDTH);
+  height: 10px;
+  position: fixed;
+  z-index: 2;
+  top: 50px;
+}
+
+.top_border {
+  background: linear-gradient(var(--LIN-GRAD-DARK), var(--LIN-GRAD-LIGHT));
+  width: var(--WIDTH);
+  height: 10px;
+  position: fixed;
+  z-index: 2;
+  bottom: 50px;
+}
+
+.toggle-switch {
+  position: absolute;
+  top: 65px;
+  right: 5px;
+  width: 27px;
+}
+
+.toggle-switch label {
+  position: absolute;
+  width: 100%;
+  height: 18px;
+  background-color: var(--SLIDER-BGC);
+  border-radius: 50px;
+  cursor: pointer;
+}
+
+.toggle-switch input {
+  position: absolute;
+  display: none;
+}
+
+.slider {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 50px;
+  transition: 0.3s;
+}
+
+input:checked ~ .slider {
+  background-color: var(--SLIDER-BGC);
+}
+
+.slider::before {
+  content: "";
+  position: absolute;
+  top: 3px;
+  left: 2px;
+  width: 13px;
+  height: 13px;
+  border-radius: 50%;
+  background-color: var(--SLIDER-COLOR);
+  transition: 0.3s;
+}
+
+input:checked ~ .slider::before {
+  transform: translateX(11px);
+  background-color: var(--SLIDER-BGC);
+  box-shadow: inset -5px 0px 0px 0px var(--SLIDER-COLOR);
+}
+
+/* About CSS */
+.about {
+  margin-top: 70px;
+}
+.about h1 {
+  text-align: center;
+  letter-spacing: var(--LINE-SPACE);
+  text-shadow: 2px 2px 1px var(--TEXT-SHADOW);
+}
+
+.about p {
+  font-size: 1.3em;
+  width: 500px;
+  font-weight: var(--FONT-WEIGHT);
+  text-shadow: 1px 1px var(--TEXT-SHADOW);
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.frame {
+  width: 550px;
+  height: auto;
+}
+
+.employee {
+  display: grid;
+  width: var(--WIDTH);
+  height: 210px;
+  justify-items: center;
+}
+
+.employee,
+.content,
+.frame {
+  grid-row: 1;
+  grid-column: 1;
+}
+
+.content img {
+  position: relative;
+  top: 18px;
+  left: 235px;
+  width: auto;
+  height: 100px;
+}
+
+.content p {
+  position: relative;
+  top: -90px;
+  left: -90px;
+  width: 270px;
+  height: 150px;
+  font-weight: var(--FONT-WEIGHT);
+  font-size: 1.2em;
+}
+
+.content h1 {
+  position: relative;
+  top: 152px;
+  left: 230px;
+}
+
+.employee:nth-child(5) {
+  margin-bottom: 70px;
+}
+
+.dark-theme .frame {
+  filter: sepia(100%) hue-rotate(190deg) saturate(300%) brightness(40%);
+}
+/* Activities CSS */
+.activities_small {
+  display: none;
+}
+
+.activities {
+  margin-top: 70px;
+  text-align: center;
+  white-space: nowrap;
+}
+
+.interactive {
+  display: grid;
+  justify-content: center;
+  align-content: center;
+  background-color: transparent;
+  margin-bottom: 70px;
+}
+
+.gameroom,
+.pool_table,
+.jumino_kart,
+.prairie_king,
+.soda_machine {
+  grid-column: 1;
+  grid-row: 1;
+  background-color: transparent;
+}
+
+.dark-theme .gameroom,
+.dark-theme .pool_table img,
+.dark-theme .jumino_kart img,
+.dark-theme .prairie_king img,
+.dark-theme .soda_machine img {
+  filter: sepia(100%) hue-rotate(190deg) saturate(300%) brightness(50%);
+}
+
+.pool_table {
+  position: relative;
+  top: 55%;
+  left: 36.8%;
+  width: fit-content;
+  height: fit-content;
+}
+
+.pool_table img {
+  width: auto;
+  height: 144px;
+}
+
+.jumino_kart {
+  position: relative;
+  top: 25.5%;
+  left: 23.6%;
+  width: fit-content;
+  height: fit-content;
+}
+
+.prairie_king {
+  position: relative;
+  top: 25.5%;
+  left: 9.6%;
+  width: fit-content;
+  height: fit-content;
+}
+
+.soda_machine {
+  position: relative;
+  top: 15.8%;
+  left: 37.1%;
+  width: fit-content;
+  height: fit-content;
+}
+
+.soda_machine:hover::before,
+.prairie_king:hover::before,
+.jumino_kart:hover::before,
+.pool_table:hover::before {
+  content: attr(data-tooltip);
+  position: absolute;
+  z-index: 1;
+  font-family: var(--TEXT-FONT);
+  font-size: 1.3em;
+  background-color: var(--TEXT-BGC);
+  color: var(--TEXT-COLOR);
+  width: 200px;
+  padding: 5px;
+  border: solid var(--LIN-GRAD-DARK);
+}
+
+.soda_machine:hover::before {
+  top: 8px;
+  left: 110px;
+}
+
+.prairie_king:hover::before,
+.jumino_kart:hover::before {
+  top: 106px;
+}
+
+.pool_table:hover::before {
+  top: 138px;
+  left: 10px;
+}
+
+/* Main CSS */
+.sign {
+  display: block;
+  margin-top: 70px;
+}
+
+.sign img {
+  margin-left: 25%;
+  margin-right: 25%;
+}
+
+.dark-theme .sign {
+  filter: sepia(100%) hue-rotate(190deg) saturate(300%) brightness(40%);
+}
+
+.welcome {
+  margin: 10px;
+  text-align: center;
+  font-weight: var(--FONT-WEIGHT);
+  text-shadow: 2px 2px var(--TEXT-SHADOW);
+}
+
+.welcome h1 {
+  font-size: 1.9em;
+}
+
+.welcome p {
+  font-size: 1.4em;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+.five_star {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  font-weight: var(--FONT-WEIGHT);
+  text-align: center;
+}
+
+.reviews {
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+  justify-items: center;
+  margin-top: 50px;
+  margin-bottom: 70px;
+  color: var(--TEXT-COLOR);
+  letter-spacing: var(--LINE-SPACE);
+}
+
+.reviews button {
+  margin: auto;
+  border: 2px solid var(--LIN-GRAD-LIGHT);
+  border-radius: var(--BORDER-RADIUS);
+  background-color: var(--LIN-GRAD-LIGHT);
+  color: var(--LIN-GRAD-DARK);
+  height: 50px;
+  width: 50px;
+  font-size: 1.5em;
+}
+
+#prev {
+  grid-column: 1;
+}
+
+.review_item {
+  grid-column: 2;
+  width: 250px;
+  text-align: center;
+  font-size: 1.2em;
+  font-weight: var(--FONT-WEIGHT);
+}
+
+.next {
+  grid-column: 3;
+}
+/* Utilities */
+.bold {
+  font-weight: var(--FONT-WEIGHT);
+  letter-spacing: var(--LINE-SPACE);
+}
+
+/* Menu CSS */
+.menu {
+  padding: 20px;
+  margin-top: 60px;
+  margin-bottom: 60px;
+  border: 3px solid var(--LIN-GRAD-DARK);
+  background-color: var(--TRANS-BGC);
+  display: grid;
+  grid-template-areas:
+    "drinkTitle ."
+    "drinks drinks"
+    "foodTitle specialsTitle"
+    "food specials"
+    "dessertsTitle ."
+    "desserts desserts";
+}
+.menu_item {
+  text-align: center;
+}
+.drinks_title {
+  grid-area: drinkTitle;
+}
+
+.drinks {
+  display: grid;
+  border: 3px dashed var(--LIN-GRAD-LIGHT);
+  padding: 5px;
+  grid-template-columns: repeat(3, 1fr);
+  grid-area: drinks;
+}
+
+.food_title {
+  grid-area: foodTitle;
+}
+
+.food {
+  display: grid;
+  border: 3px dashed var(--LIN-GRAD-LIGHT);
+  padding: 5px;
+  margin-right: 5px;
+  grid-template-columns: repeat(2, 1fr);
+  grid-area: food;
+}
+
+.specials_title {
+  grid-area: specialsTitle;
+}
+
+.specials {
+  display: grid;
+  border: 3px dashed var(--LIN-GRAD-LIGHT);
+  padding: 5px;
+  grid-template-columns: repeat(2, 1fr);
+  grid-area: specials;
+}
+
+.desserts_title {
+  grid-area: dessertsTitle;
+}
+
+.desserts {
+  display: grid;
+  border: 3px dashed var(--LIN-GRAD-LIGHT);
+  padding: 5px;
+  grid-template-columns: repeat(2, 1fr);
+  grid-area: desserts;
+}
+
+@media screen and (max-width: 1024px) and (max-width: 1280px) {
+}
+@media screen and (max-width: 768px) {
+  nav,
+  footer,
+  .top_border,
+  .bottom_border {
+    width: 100vw;
+  }
+
+  nav,
+  footer {
+    height: 7vh;
+  }
+
+  nav {
+    font-size: 4vh;
+  }
+
+  .top_border {
+    bottom: 7vh;
+  }
+
+  .bottom_border {
+    top: 7vh;
+  }
+
+  .toggle-switch {
+    top: 9vh;
+  }
+
+  body {
+    width: 80vw;
+  }
+
+  .activity_body {
+    background-color: transparent;
+  }
+  .activities {
+    background-color: var(--TEXT-BGC);
+    border: 5px solid var(--TEXT-BGC);
+    border-radius: var(--BORDER-RADIUS);
+  }
+}
+
+@media screen and (max-width: 640px) {
+  body,
+  nav,
+  footer {
+    width: max(300px, 100%);
+  }
+
+  footer,
+  nav {
+    height: 10vh;
+  }
+
+  nav {
+    font-size: 4vmax;
+  }
+
+  body {
+    background-color: transparent;
+  }
+
+  .bottom_border {
+    top: 10vh;
+  }
+
+  .top_border {
+    bottom: 10vh;
+  }
+
+  .toggle-switch {
+    top: 120%;
+  }
+
+  .background {
+    background-image: url(Pelican_Day.png);
+    background-position: -500px -400px;
+  }
+
+  .dark-theme .background {
+    background-image: url(Pelican_Night.png);
+  }
+
+  .sign {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+
+  .sign img {
+    width: max(90%, 300px);
+  }
+
+  .welcome {
+    text-shadow: none;
+    background-color: var(--TRANS-BGC);
+    text-align: center;
+    padding: 10px;
+    border-radius: var(--BORDER-RADIUS);
+  }
+
+  .reviews {
+    display: flex;
+    height: 30vh;
+    width: 100%;
+    align-items: center;
+    color: var(--LIN-GRAD-LIGHT);
+    margin-bottom: 10vh;
+    background-color: var(--LIN-GRAD-DARK);
+  }
+
+  .menu {
+    border: none;
+    background-color: transparent;
+    grid-template-areas:
+      "drinkTitle ."
+      "drinks drinks"
+      "foodTitle ."
+      "food food"
+      "specialsTitle ."
+      "specials specials"
+      "dessertsTitle ."
+      "desserts desserts";
+    margin-top: 10vh;
+    margin-bottom: 10vh;
+  }
+
+  .dark-theme .menu {
+    background-image: url(Pelican_Night.png);
+  }
+
+  .menu .drinks,
+  .food,
+  .specials,
+  .desserts {
+    background-color: var(--TRANS-BGC);
+  }
+
+  .menu > h1 {
+    background-color: var(--TEXT-BGC);
+    text-align: center;
+    padding: 2px;
+    border-radius: var(--BORDER-RADIUS);
+    margin-top: 15px;
+    margin-bottom: 15px;
+  }
+
+  .menu p {
+    font-weight: var(--FONT-WEIGHT);
+    font-size: 2vmax;
+  }
+
+  .frame {
+    display: none;
+  }
+
+  .content h1,
+  .content p,
+  .content img {
+    position: static;
+  }
+
+  .about {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 80%;
+  }
+
+  .about div {
+    background-color: var(--TRANS-BGC);
+    padding: 10px;
+    border-radius: var(--BORDER-RADIUS);
+  }
+
+  .about h1 {
+    font-size: 2.1em;
+    padding-bottom: 20px;
+  }
+
+  .about p {
+    width: auto;
+  }
+
+  .employee {
+    width: 100vw;
+  }
+
+  .employee:nth-child(5) {
+    margin-top: 10px;
+    margin-bottom: 25vh;
+  }
+
+  .content {
+    display: grid;
+    grid-template-columns: 40% 60%;
+    grid-template-areas:
+      "header info "
+      "picture info";
+    justify-items: center;
+    align-items: center;
+    width: 90vw;
+    padding: 10px;
+    background-color: var(--TRANS-BGC);
+    border-radius: var(--BORDER-RADIUS);
+    text-shadow: 2px 2px 1px var(--TEXT-SHADOW);
+  }
+
+  .content h1 {
+    grid-area: header;
+  }
+
+  .content img {
+    grid-area: picture;
+    width: 120px;
+    height: auto;
+    background-color: var(--LIN-GRAD-LIGHT);
+    border: 2px solid var(--LIN-GRAD-DARK);
+  }
+
+  .content p {
+    grid-area: info;
+    width: fit-content;
+    height: auto;
+    text-align: justify;
+    padding: 5px;
+  }
+
+  .gameroom {
+    display: none;
+  }
+
+  .activities {
+    display: none;
+  }
+
+  .interactive {
+    display: block;
+  }
+
+  .activities_small {
+    margin-top: 20vh;
+    display: block;
+    text-align: center;
+    font-family: var(--HEADER-FONT);
+    font-size: 1.8em;
+    letter-spacing: var(--LINE-SPACE);
+    text-shadow: 2px 2px 1px var(--TEXT-SHADOW);
+  }
+
+  .dark-theme .activities_small {
+    font-weight: normal;
+  }
+
+  .jumino_kart,
+  .pool_table,
+  .soda_machine,
+  .prairie_king {
+    position: static;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 90vw;
+    margin-top: 5vh;
+    margin-bottom: 5vh;
+    background-color: var(--TRANS-BGC);
+    padding: 10px;
+    border: 2px solid var(--LIN-GRAD-DARK);
+  }
+
+  .pool_table img {
+    width: auto;
+    height: 10vh;
+  }
+
+  .soda_machine {
+    margin-bottom: 15vh;
+  }
+
+  .prairie_king img {
+    height: inherit;
+  }
+
+  .jumino_kart::before,
+  .pool_table::before,
+  .soda_machine::before,
+  .prairie_king::before {
+    display: none;
+  }
+
+  .jumino_kart::after,
+  .pool_table::after,
+  .soda_machine::after,
+  .prairie_king::after {
+    content: attr(data-tooltip);
+    padding: 10px;
+    font-size: 1.6em;
+    font-weight: var(--FONT-WEIGHT);
+  }
+}

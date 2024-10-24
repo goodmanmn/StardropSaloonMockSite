@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./style/styles.css" />
+    <title>Document</title>
+  </head>
+  <body class="activity_body">
+    <nav>
+      <p><a href="/main.html">Home</a></p>
+      <p><a href="/about.html">About</a></p>
+      <p><a href="/menu.html">Menu</a></p>
+      <div class="toggle-switch">
+        <label>
+          <input type="checkbox" id="dark-theme-toggle" />
+          <span class="slider"></span>
+        </label>
+      </div>
+    </nav>
+    <div class="bottom_border"></div>
+    <h2 class="activities_small">
+      Come check out our gameroom, the perfect hangout space! <br />
+      We have:
+    </h2>
+    <h2 class="activities">
+      <span class="activity_word">Hover</span> over the different activities to
+      find out more about them!
+    </h2>
+    <div class="interactive">
+      <img
+        class="gameroom"
+        src="./misc_images/Saloon_Gameroom.png"
+        alt="Saloon Gameroom" />
+      <div
+        class="tooltip pool_table"
+        data-tooltip="Pool Table: The pool table is available to anyone who asks!">
+        <img src="./misc_images/Pool Table.png" alt="Saloon Pool Table" />
+      </div>
+      <div
+        class="tooltip jumino_kart"
+        data-tooltip="Jumino Kart: See how far you get in this platforming cart game!">
+        <img
+          src="./misc_images/Junimo_Kart_Arcade_System.png"
+          alt="Saloon Jumino Cart" />
+      </div>
+      <div
+        class="tooltip prairie_king"
+        data-tooltip="Journey of the Prairie King: Try your hand at this notoriously difficult top-down twin-stick shooter. Good Luck!">
+        <img
+          src="./misc_images/Prairie_King_Arcade_System.png"
+          alt="Saloon Prairie King" />
+      </div>
+      <div
+        class="tooltip soda_machine"
+        data-tooltip="Soda machine: Get your favorite Joja Cola sodas here. Perfect for underage patrons!">
+        <img src="./misc_images/Soda_Machine.png" alt="Saloon Soda Machine" />
+      </div>
+    </div>
+    <div class="top_border"></div>
+    <footer>
+      <div class="hours">
+        <p><span class="bold">Hours:</span> Everyday 12:00am - 12:00pm</p>
+      </div>
+      <div class="location">
+        <p><span class="bold">Location:</span> Center of Pelican Town</p>
+      </div>
+    </footer>
+    <script src="script.js"></script>
+  </body>
+</html>

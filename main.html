@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./style/styles.css" />
+    <title>Stardrop Saloon Mock Website</title>
+  </head>
+  <body>
+    <nav>
+      <p><a href="/menu.html">Menu</a></p>
+      <p><a href="/about.html">About</a></p>
+      <p><a href="/activities.html">Activities</a></p>
+      <div class="toggle-switch">
+        <label>
+          <input type="checkbox" id="dark-theme-toggle" />
+          <span class="slider"></span>
+        </label>
+      </div>
+    </nav>
+    <div class="bottom_border"></div>
+    <div class="background">
+      <div class="sign">
+        <img src="./misc_images/Saloon_Sign.png" alt="Stardrop Saloon Sign" />
+      </div>
+      <section class="welcome">
+        <h1>Welcome to The Stardrop Saloon!</h1>
+        <p>
+          Come enjoy some delicious food, refreshing beer and a friendly
+          atmosphere at the Stardrop Saloon in the center of Pelican Town!
+        </p>
+
+        <div class="five_star">
+          <div>
+            <img
+              src="./misc_images/Stardrop.png"
+              alt="stardrop icon"
+              width="48"
+              height="48" />
+            <img
+              src="./misc_images/Stardrop.png"
+              alt="stardrop icon"
+              width="48"
+              height="48" />
+            <img
+              src="./misc_images/Stardrop.png"
+              alt="stardrop icon"
+              width="48"
+              height="48" />
+            <img
+              src="./misc_images/Stardrop.png"
+              alt="stardrop icon"
+              width="48"
+              height="48" />
+            <img
+              src="./misc_images/Stardrop.png"
+              alt="stardrop icon"
+              width="48"
+              height="48" />
+          </div>
+          <p>A Five Stardrop Rating Destination!</p>
+        </div>
+      </section>
+      <section class="reviews">
+        <button class="prev" onclick="previousReview()">
+          <i class="fa-solid fa-arrow-left"></i>
+        </button>
+        <div class="review_item">
+          <img
+            src="./people_images/Pam_Happy.png"
+            alt="Pam smiling"
+            width="128"
+            height="128" />
+          <p>"Gus serves the best beer in town!"</p>
+          <p>- Pam</p>
+        </div>
+        <div class="review_item">
+          <img
+            src="./people_images/Clint_Happy.png"
+            alt="Clint smiling"
+            width="128"
+            height="128" />
+          <p>"My favorite place to unwind after work."</p>
+          <p>- Clint</p>
+        </div>
+        <div class="review_item">
+          <img
+            src="./people_images/Sam_Happy.png"
+            alt="Sam smiling"
+            width="128"
+            height="128" />
+          <p>"The game room makes for an awesome hangout spot!</p>
+          <p>- Sam</p>
+        </div>
+        <div class="review_item">
+          <img
+            src="./people_images/Shane_Blushing.png"
+            alt="Shane smiling"
+            width="128"
+            height="128" />
+          <p>"A great bar to drown your sorrows."</p>
+          <p>- Shane</p>
+        </div>
+
+        <button class="next" onclick="nextReview()">
+          <i class="fa-solid fa-arrow-right"></i>
+        </button>
+      </section>
+    </div>
+    <div class="top_border"></div>
+    <footer>
+      <p><span class="bold">Hours:</span> Everyday 12:00am - 12:00pm</p>
+      <p><span class="bold">Location:</span> Center of Pelican Town</p>
+    </footer>
+    <script
+      src="https://kit.fontawesome.com/ef7ec027d4.js"
+      crossorigin="anonymous"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
